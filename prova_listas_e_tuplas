@@ -1,0 +1,52 @@
+#Solicitação ao usuarios os 10 valores e preenchendo ele em uma lista.
+valores = []
+for i in range(10):
+    valor = float(input(f'Digite o {i+1}º valor: '))
+    valores.append(valor)
+
+#Separando os valores em duas listas diferentes: pares e ímpares.
+numeros_pares = []
+numeros_impares = []
+
+#Contador dos valores para saber quantos números pares e ímpares tem em cada lista.
+valor_par = 0
+valor_impar = 0
+
+#Testanto se o número é par ou ímpar.
+for valor in valores:
+    if valor % 2 == 0:
+        numeros_pares.append(valor)
+        valor_par+=1
+    else:
+        numeros_impares.append(valor)
+        valor_impar+=1
+
+#Transformando a lista dos valores, a lista de números pares e a lista de números ímpares em tuplas.
+tupla_total = tuple(valores)
+tupla_par = tuple(numeros_pares)
+tupla_impar = tuple(numeros_impares)
+
+#Fazendo a soma dos números digitados: tanto os números pares, ímpares e depois o total de todos eles.
+soma_pares = sum(numeros_pares)
+soma_impares = sum(numeros_impares)
+soma_total = (soma_pares+soma_impares)
+
+print('-----------------------------------------------------------------------------------------------')
+
+#Exibindo na tela os números pares, os números ímpares em uma tupla.
+print(f'Números inseridos em tupla: {tupla_total}')
+print(f'Números pares inseridos em tupla: {tupla_par}')
+print(f'Números ímpares inseridos em tupla: {tupla_impar}')
+
+print('-----------------------------------------------------------------------------------------------')
+
+#Exibindo a quantidade de números pares e ímpares presentes na lista.
+print(f'A lista tem: {valor_par} números pares')
+print(f'A lista tem: {valor_impar} números ímpares')
+
+print('-----------------------------------------------------------------------------------------------')
+
+#Exibindo a soma de todos os números pares e ímpares respectivamente. E a soma total de todos os números digitados.
+print(f'A soma de todos os números pares é de: {soma_pares}')
+print(f'A soma de todos os números ímpares é de: {soma_impares}')
+print(f'E a soma de todos os números pares e ímpares é de: {soma_total}')
